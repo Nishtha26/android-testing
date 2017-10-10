@@ -21,7 +21,7 @@ TextView t,u,v;
 		t=(TextView)findViewById(R.id.textView32);
 		
 		v=(TextView)findViewById(R.id.textView30);
-		WifiManager wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
+		WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
 		WifiInfo wInfo = wifiManager.getConnectionInfo();
 		String macAddress = wInfo.getMacAddress();
 		String n= wInfo.LINK_SPEED_UNITS;

@@ -35,6 +35,8 @@
             android:name=".MainActivity"
             android:label="@string/app_name" >
         </activity>
+        <activity android:name=".Manual_Test"
+            android:label="Manual Test"></activity>
         <activity
             android:name=".Accelarometer"
             android:label="@string/title_activity_accelarometer" >
