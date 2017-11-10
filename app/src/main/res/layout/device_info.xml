@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:title="OT Device Check"
-        app:titleTextColor="#ffffff"
         android:background="#4169e1"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        android:title="OT Device Check"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="#ffffff" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Device Information"
-        android:paddingTop="15dp"
-        android:textSize="30dp"
-        android:textColor="#000000"
-        android:paddingBottom="15dp"/>
-
-    <LinearLayout
-        android:orientation="horizontal"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        >
+        android:fillViewport="true">
 
-        <ListView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
 
-            android:id="@+id/list_name">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp"
+                android:text="Device Information"
+                android:textColor="#000000"
+                android:textSize="30dp" />
 
-        </ListView>
->
+            <ListView
+                android:id="@+id/list_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+            </ListView>
 
 
-
-    </LinearLayout>
-
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

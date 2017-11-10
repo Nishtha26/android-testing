@@ -11,6 +11,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -43,15 +44,25 @@ public class DeviceInfo extends AppCompatActivity {
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
+        DatabaseHandler dbHandler = new DatabaseHandler(this);
+        List<SQLElement> dataList = dbHandler.getAllElements();
         List<String> names = Arrays.asList("OS Version", "Version Release", "Device", "Model", "Product", "Brand", "Display", "Hardware", "ID", "Manufacturer", "Serial", "User", "Host", "Total RAM", "Free RAM", "Total Int Memory", "Available Int Memory");
 
         values = getDeviceInfo();
         ListView name = (ListView)findViewById(R.id.list_name);
 
+
         ViewAdapter adapter = new ViewAdapter(getBaseContext(),names,values);
 
 
         name.setAdapter(adapter);
+
+        View footer = getLayoutInflater().inflate(R.layout.deviceinfo_footer,null);
+        ListView databaseList = (ListView) footer.findViewById(R.id.databaseList);
+        DbListAdapter dbadapter = new DbListAdapter(getBaseContext(),dataList);
+        databaseList.setAdapter(dbadapter);
+
+        name.addFooterView(footer);
 
     }
 
