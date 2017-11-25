@@ -88,4 +88,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         return elementList;
     }
+
+    public int updateElement(SQLElement element){
+        SQLiteDatabase sqldb = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(KEY_ELEMENT,element.getElement());
+        values.put(KEY_VERDICT,element.getVerdict());
+        values.put(KEY_TIME,element.getTimeStamp());
+
+        return sqldb.update(TABLE_NAME, values, KEY_ELEMENT + "=?",new String[]{String.valueOf(element.getElement())});
+    }
 }
