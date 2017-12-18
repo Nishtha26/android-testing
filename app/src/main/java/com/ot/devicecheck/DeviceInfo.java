@@ -51,18 +51,26 @@ public class DeviceInfo extends AppCompatActivity {
         values = getDeviceInfo();
         ListView name = (ListView)findViewById(R.id.list_name);
 
-
         ViewAdapter adapter = new ViewAdapter(getBaseContext(),names,values);
-
-
         name.setAdapter(adapter);
 
-        View footer = getLayoutInflater().inflate(R.layout.deviceinfo_footer,null);
-        ListView databaseList = (ListView) footer.findViewById(R.id.databaseList);
+        //View footer = getLayoutInflater().inflate(R.layout.deviceinfo_footer,null);
+        //ListView databaseList = (ListView) footer.findViewById(R.id.databaseList);
+
+        ListView databaseList = (ListView) findViewById(R.id.databaseList);
         DbListAdapter dbadapter = new DbListAdapter(getBaseContext(),dataList);
         databaseList.setAdapter(dbadapter);
 
-        name.addFooterView(footer);
+        //View header = getLayoutInflater().inflate(R.layout.deviceinfo_header,null);
+        //ListView name = (ListView)header.findViewById(R.id.list_name);
+        //ViewAdapter adapter = new ViewAdapter(getBaseContext(),names,values);
+        //name.setAdapter(adapter);
+
+
+
+        //databaseList.addHeaderView(name);
+
+        //name.addFooterView(footer);
 
     }
 
