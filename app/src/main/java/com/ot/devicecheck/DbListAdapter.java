@@ -3,6 +3,7 @@ package com.ot.devicecheck;
 import android.app.Activity;
 import android.content.Context;
 import android.text.format.DateUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,6 +61,7 @@ public class DbListAdapter extends BaseAdapter {
 
         SQLElement data = listname.get(i);
         tv1.setText(data.getElement());
+        Log.i("DbListAdap CheckElement", "" +data.getElement());
         if (data.getVerdict().contentEquals("Working"))
         {
             iv2.setImageResource(R.drawable.checkmark);
