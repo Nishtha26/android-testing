@@ -48,7 +48,7 @@ public class Display extends Activity {
                     case DialogInterface.BUTTON_POSITIVE:
                         Log.i("Positive", "Clicked");
                         element = new SQLElement();
-                        element.setElement("Proximity");
+                        element.setElement("Display");
                         element.setVerdict("Working");
                         element.setTimeStamp("" + System.currentTimeMillis());
                         db.addElement(element);
@@ -58,7 +58,7 @@ public class Display extends Activity {
                     case DialogInterface.BUTTON_NEGATIVE:
                         Log.i("Negative", "Clicked");
                         element = new SQLElement();
-                        element.setElement("Proximity");
+                        element.setElement("Display");
                         element.setVerdict("Not Working");
                         element.setTimeStamp("" + System.currentTimeMillis());
                         db.addElement(element);
