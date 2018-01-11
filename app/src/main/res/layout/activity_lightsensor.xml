@@ -1,25 +1,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="clip_vertical"
-    android:background="@android:color/holo_blue_light" >
+    android:background="#FF6F00"
+    >
 
-    <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="130dp"
-        android:layout_height="100dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="43dp"
-        android:orientation="vertical" >
-
-        <TextView
-            android:id="@+id/textView51"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="Light sensor not present" />
-    </LinearLayout>
 
     <ImageView
         android:id="@+id/imageView1"
@@ -28,6 +12,30 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:src="@drawable/light" />
+        android:src="@drawable/Simple_light_bulb_graphic" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Check whether value is changing"
+        android:textColor="#ffffff"
+        android:textSize="18dp"
+        android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textView51"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Light sensor not present"
+            android:textColor="#ffffff"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/textView13"
+            android:layout_alignRight="@+id/imageView1"
+            android:layout_marginTop="113dp" />
+
 
 </RelativeLayout>

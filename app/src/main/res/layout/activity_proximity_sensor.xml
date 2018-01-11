@@ -7,15 +7,37 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.ot.devicecheck.ProximitySensor"
-    android:background="@android:color/holo_blue_light" >
+    android:background="#FF6F00" >
+
+ <ImageView
+     android:layout_width="200dp"
+     android:layout_height="200dp"
+     android:id="@+id/vib"
+     android:src="@drawable/proximity"
+     android:layout_alignParentTop="true"
+     android:layout_centerHorizontal="true"
+     android:layout_marginTop="25dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cover the Proximity Sensor with your hand"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:textSize="18dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/textView13" />
 
  <TextView
      android:id="@+id/tVProximity"
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
+     android:textStyle="bold"
+     android:textColor="#ffffff"
+     android:textSize="18dp"
+     android:layout_below="@+id/textView13"
      android:layout_centerHorizontal="true"
-     android:layout_centerVertical="true"
-     android:layout_marginTop="19dp"
-     android:textSize="20sp" />
+     android:layout_marginTop="47dp" />
  
 </RelativeLayout>

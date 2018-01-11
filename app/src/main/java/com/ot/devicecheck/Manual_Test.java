@@ -21,7 +21,7 @@ import java.util.List;
 public class Manual_Test extends AppCompatActivity implements AdapterView.OnItemClickListener {
     Intent intent;
 
-    Integer[] icons = {R.drawable.vibration, R.drawable.versioncheck2, R.drawable.sim, R.drawable.proximity,
+    Integer[] icons = {R.drawable.vibration, /*R.drawable.versioncheck2, R.drawable.sim,*/ R.drawable.proximity,
             R.drawable.flash, R.drawable.touch, R.drawable.display, R.drawable.light, R.drawable.pressure, R.drawable.phonebut, R.drawable.speaker,
             R.drawable.wifi, R.drawable.bluetooth, R.drawable.gravity, R.drawable.magnetic, R.drawable.headphone,
             R.drawable.gyroscope, R.drawable.gps, R.drawable.battery2, R.drawable.accelerometer};
@@ -36,7 +36,7 @@ public class Manual_Test extends AppCompatActivity implements AdapterView.OnItem
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manualtest);
 
-        items = Arrays.asList("Vibration Test", "Check Version Info", "SIM Card", "Proximity Sensor",
+        items = Arrays.asList("Vibration Test", /*"Check Version Info", "SIM Card",*/ "Proximity Sensor",
                 "Flash Light", "Touch Sensor", "Display", "Light Sensor", "Pressure Sensor"
                 , "Phone Buttons", "Speaker Test", "Wi-Fi Address", "Bluetooth Address", "Gravity sensor", "Magnetic Sensor", "Headphone",
                 "Gyroscope", "GPS Location", "Battery Indicator", "Accelarometer");
@@ -62,7 +62,7 @@ public class Manual_Test extends AppCompatActivity implements AdapterView.OnItem
                 intent = new Intent(this, Vibration.class);
                 startActivity(intent);
                 break;
-            case 2:
+/*            case 2:
                 intent = new Intent(this, Tele.class);
                 startActivity(intent);
                 break;
@@ -70,89 +70,89 @@ public class Manual_Test extends AppCompatActivity implements AdapterView.OnItem
                 //not whole info
                 intent = new Intent(getApplicationContext(), Systeminfo.class);
                 startActivity(intent);
-                break;
-            case 3:
+                break;*/
+            case 1:
 
                 intent = new Intent(getApplicationContext(), ProximitySensor.class);
                 startActivity(intent);
                 break;
 
-            case 4:
+            case 2:
                 //not working
                 intent = new Intent(getApplicationContext(), Flash.class);
                 startActivity(intent);
                 break;
 
-            case 5:
+            case 3:
 
                 intent = new Intent(getApplicationContext(), TouchSensor.class);
                 startActivity(intent);
                 break;
-            case 6:
+            case 4:
                 //display multiple lighting
                 intent = new Intent(getApplicationContext(), Display.class);
                 startActivity(intent);
                 break;
-            case 7:
+            case 5:
                 //light sensor display of dac values
                 intent = new Intent(getApplicationContext(), Lightsensor.class);
                 startActivity(intent);
                 break;
-            case 8:
+            case 6:
 
                 intent = new Intent(getApplicationContext(), Pressure.class);
                 startActivity(intent);
                 break;
 
-            case 9:
+            case 7:
                 //wrong the volume buttons,home,menu etc has to be checked here
                 intent = new Intent(getApplicationContext(), Buttontesting.class);
                 startActivity(intent);
                 break;
-            case 10:
+            case 8:
                 //wrong should have done that while taking calling position we here our voice
                 intent = new Intent(getApplicationContext(), Mictesting.class);
                 startActivity(intent);
                 break;
-            case 11:
+            case 9:
 
                 intent = new Intent(getApplicationContext(), Wifiaddress.class);
                 startActivity(intent);
                 break;
-            case 12:
+            case 10:
 
                 intent = new Intent(getApplicationContext(), Blueadd.class);
                 startActivity(intent);
                 break;
-            case 13:
+            case 11:
 
                 intent = new Intent(getApplicationContext(), Gravitysensor.class);
                 startActivity(intent);
                 break;
 
-            case 14:
+            case 12:
                 intent = new Intent(getApplicationContext(), Magneticsensor.class);
                 startActivity(intent);
                 break;
-            case 15:
+            case 13:
                 //not working
                 intent = new Intent(getApplicationContext(), Headphone.class);
                 startActivity(intent);
                 break;
-            case 16:
+            case 14:
                 intent = new Intent(getApplicationContext(), Gyroscope.class);
                 startActivity(intent);
                 break;
-            case 17:
+            case 15:
                 //test again
                 intent = new Intent(getApplicationContext(), Gpsloc.class);
                 startActivity(intent);
                 break;
-            case 18:
+            case 16:
                 intent = new Intent(getApplicationContext(), Batteryindicator.class);
                 startActivity(intent);
                 break;
-            case 19:
+            case 17:
                 intent = new Intent(getApplicationContext(), Accelarometer.class);
                 startActivity(intent);
                 break;

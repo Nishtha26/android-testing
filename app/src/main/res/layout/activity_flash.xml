@@ -2,24 +2,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FF6F00"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.ot.devicecheck.Flash"
-    android:background="@android:color/holo_blue_light">
+    tools:context="com.ot.devicecheck.Flash">
 
-   <ImageButton
+    <ImageButton
         android:id="@+id/btnSwitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dip"
-        android:src="@drawable/btn_switch_on"
         android:background="@null"
         android:contentDescription="@null"
-         />
-    
-    
+        android:src="@drawable/btn_switch_on" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Click on switch to toggle Flashlight"
+        android:textColor="#ffffff"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
 
 </RelativeLayout>

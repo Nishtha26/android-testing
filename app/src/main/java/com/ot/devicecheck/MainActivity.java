@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity
         device_info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                intent = new Intent(getApplicationContext(),DeviceInfo.class);
+                intent = new Intent(getApplicationContext(),CompleteInfo.class);
                 startActivity(intent);
             }
         });

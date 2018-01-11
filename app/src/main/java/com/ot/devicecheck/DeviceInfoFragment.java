@@ -1,78 +1,60 @@
 package com.ot.devicecheck;
 
-import android.app.Activity;
 import android.app.ActivityManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.StatFs;
-import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Adapter;
-import android.widget.ArrayAdapter;
+import android.view.ViewGroup;
 import android.widget.ListView;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static android.content.Context.ACTIVITY_SERVICE;
+
 /**
- * Created by Pranjal Gupta on 15-10-2017.
+ * Created by Pranjal Gupta on 27-12-2017.
  */
 
-public class DeviceInfo extends AppCompatActivity {
+public class DeviceInfoFragment extends Fragment {
 
-    //String[] names = {"OS Version", "Release", "Device"};
     List<String> values;
 
+    View view;
+    public DeviceInfoFragment() {
+        // Required empty public constructor
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        view = inflater.inflate(R.layout.fragment_device_info, container, false);
 
-        setContentView(R.layout.device_info);
-
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(myToolbar);
-        getSupportActionBar().setTitle("OT Device Check");
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
-        DatabaseHandler dbHandler = new DatabaseHandler(this);
-        List<SQLElement> dataList = dbHandler.getAllElements();
         List<String> names = Arrays.asList("OS Version", "Version Release", "Device", "Model", "Product", "Brand", "Display", "Hardware", "ID", "Manufacturer", "Serial", "User", "Host", "Total RAM", "Free RAM", "Total Int Memory", "Available Int Memory");
 
         values = getDeviceInfo();
-        ListView name = (ListView)findViewById(R.id.list_name);
+        ListView name = (ListView)view.findViewById(R.id.info_list);
 
-        ViewAdapter adapter = new ViewAdapter(getBaseContext(),names,values);
+        ViewAdapter adapter = new ViewAdapter(getContext(),names,values);
         name.setAdapter(adapter);
 
-        //View footer = getLayoutInflater().inflate(R.layout.deviceinfo_footer,null);
-        //ListView databaseList = (ListView) footer.findViewById(R.id.databaseList);
-
-        ListView databaseList = (ListView) findViewById(R.id.databaseList);
-        DbListAdapter dbadapter = new DbListAdapter(getBaseContext(),dataList);
-        databaseList.setAdapter(dbadapter);
-
-        //View header = getLayoutInflater().inflate(R.layout.deviceinfo_header,null);
-        //ListView name = (ListView)header.findViewById(R.id.list_name);
-        //ViewAdapter adapter = new ViewAdapter(getBaseContext(),names,values);
-        //name.setAdapter(adapter);
-
-
-
-        //databaseList.addHeaderView(name);
-
-        //name.addFooterView(footer);
-
+        return view;
     }
+
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public List<String> getDeviceInfo(){
@@ -106,7 +88,7 @@ public class DeviceInfo extends AppCompatActivity {
 
     private long freeRamMemorySize() {
         ActivityManager.MemoryInfo mi = new ActivityManager.MemoryInfo();
-        ActivityManager activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+        ActivityManager activityManager = (ActivityManager) getActivity().getSystemService(ACTIVITY_SERVICE);
         activityManager.getMemoryInfo(mi);
         long availableMegs = mi.availMem / 1048576L;
 
@@ -115,7 +97,7 @@ public class DeviceInfo extends AppCompatActivity {
 
     private long totalRamMemorySize() {
         ActivityManager.MemoryInfo mi = new ActivityManager.MemoryInfo();
-        ActivityManager activityManager = (ActivityManager)getSystemService(ACTIVITY_SERVICE);
+        ActivityManager activityManager = (ActivityManager)getActivity().getSystemService(ACTIVITY_SERVICE);
         activityManager.getMemoryInfo(mi);
         long availableMegs = mi.totalMem / 1048576L;
         return availableMegs;
