@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/android-device-check.iml" filepath="$PROJECT_DIR$/android-device-check.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android-device-check-aj.iml" filepath="$PROJECT_DIR$/android-device-check-aj.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
