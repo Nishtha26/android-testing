@@ -4,6 +4,8 @@ import java.util.Locale;
 import java.util.Random;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
@@ -14,6 +16,9 @@ import android.widget.Button;
 public class Mictesting extends Activity implements TextToSpeech.OnInitListener{
 	private static final String TAG = "TextToSpeechDemo";
 
+    SQLElement element;
+    DatabaseHandler db;
+    DialogInterface.OnClickListener dialogClickListener;
     private TextToSpeech mTts;
     private Button mAgainButton;
 
@@ -37,6 +42,36 @@ public class Mictesting extends Activity implements TextToSpeech.OnInitListener{
                 sayHello();
             }
         });
+
+        db = new DatabaseHandler(this);
+
+        dialogClickListener = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                switch (i) {
+                    case DialogInterface.BUTTON_POSITIVE:
+                        Log.i("Positive", "Clicked");
+                        element = new SQLElement();
+                        element.setElement("Speaker");
+                        element.setVerdict("Working");
+                        element.setTimeStamp("" + System.currentTimeMillis());
+                        db.addElement(element);
+                        db.updateElement(element);
+                        finish();
+                        break;
+                    case DialogInterface.BUTTON_NEGATIVE:
+                        Log.i("Negative", "Clicked");
+                        element = new SQLElement();
+                        element.setElement("Speaker");
+                        element.setVerdict("Not Working");
+                        element.setTimeStamp("" + System.currentTimeMillis());
+                        db.addElement(element);
+                        db.updateElement(element);
+                        finish();
+                        break;
+                }
+            }
+        };
     }
 
     @Override
@@ -97,5 +132,15 @@ public class Mictesting extends Activity implements TextToSpeech.OnInitListener{
         mTts.speak(hello,
             TextToSpeech.QUEUE_FLUSH,  // Drop all pending entries in the playback queue.
             null);
+    }
+
+    @Override
+    public void onBackPressed() {
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(Mictesting.this);
+        builder.setMessage("Is it functionality working properly?").setPositiveButton("Yes", dialogClickListener).setNegativeButton("No", dialogClickListener).show();
+
+
     }
 }
