@@ -2,35 +2,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FF6F00"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.ot.devicecheck.Pressure"
-    android:background="@android:color/holo_blue_light" >
+    tools:context="com.ot.devicecheck.Pressure">
 
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="fill_parent"
         android:layout_height="200dp"
-         android:layout_centerHorizontal="true"
-        android:src="@drawable/ps2" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/pressure" />
 
-    <LinearLayout
+
+    <TextView
+        android:id="@+id/textView51"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
-        android:orientation="vertical" >
+        android:layout_centerVertical="true"
+        android:text="Check whether value is changing"
+        android:textColor="#ffffff"
+        android:textSize="18dp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView00"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="112dp"
-            android:layout_weight="1"
-            android:text="Pressure sensor not present" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/textView00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView51"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="117dp"
+        android:text="Pressure sensor not present"
+        android:textColor="#ffffff"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
 
 </RelativeLayout>
