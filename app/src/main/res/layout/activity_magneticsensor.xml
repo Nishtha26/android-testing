@@ -7,37 +7,46 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.ot.devicecheck.Magneticsensor"
-    android:background="@android:color/holo_blue_light">
+    android:background="#FF6F00">
 
     <LinearLayout
         android:id="@+id/linearLayout1"
-        android:layout_width="130dp"
-        android:layout_height="100dp"
-        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/imageView1"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="38dp"
-        android:orientation="vertical" >
+        android:layout_marginTop="99dp">
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Magntic sensor" />
+            android:text="Magntic sensor"
+            android:textColor="#ffffff"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="not present" />
+            android:text="not present"
+            android:textColor="#ffffff"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text=" " />
+            android:text=" "
+            android:textColor="#ffffff"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
     </LinearLayout>
 
     <ImageView
@@ -47,6 +56,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:src="@drawable/magnetdiet" />
+        android:src="@drawable/magnetic" />
 
 </RelativeLayout>
