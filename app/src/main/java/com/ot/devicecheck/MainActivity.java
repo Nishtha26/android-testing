@@ -31,6 +31,15 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        Button auto_test = (Button)findViewById(R.id.button2);
+        auto_test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intent = new Intent(getApplicationContext(),Auto_Test.class);
+                startActivity(intent);
+            }
+        });
+
         Button manual_test = (Button)findViewById(R.id.button3);
         manual_test.setOnClickListener(new View.OnClickListener() {
             @Override
