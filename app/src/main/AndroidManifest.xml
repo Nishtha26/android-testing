@@ -41,6 +41,8 @@
             android:label="Device Information"></activity>
         <activity android:name=".Manual_Test"
             android:label="Manual Test"></activity>
+        <activity android:name=".Auto_Test"
+            android:label="Automated Tests"></activity>
         <activity
             android:name=".Accelarometer"
             android:label="@string/title_activity_accelarometer" >
