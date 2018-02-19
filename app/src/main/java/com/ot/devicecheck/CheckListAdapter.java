@@ -1,42 +1,73 @@
 package com.ot.devicecheck;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
  * Created by Pranjal Gupta on 31-01-2018.
  */
 
-public class CheckListAdapter extends ArrayAdapter<String> {
+public class CheckListAdapter extends BaseAdapter {
 
-    ArrayList<String> list;
+    List<String> list, listClass, result;
+    String name;
+    CheckBox chbx;
+    Context context;
 
-    public CheckListAdapter(Context context, List<String> list) {
-        super(context, 0, list);
+    public CheckListAdapter(Context context, List<String> list, List<String> listClass) {
+        this.context = context;
+        this.list = list;
+        this.listClass = listClass;
+
+    }
+
+    @Override
+    public int getCount() {
+        return list.size();
+    }
+
+    @Override
+    public Object getItem(int i) {
+        return null;
+    }
+
+    @Override
+    public long getItemId(int i) {
+        return 0;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // TODO Auto-generated method stub
         // cv=convertView;
-        final String name = getItem(position);
+        //final String name = getItem(position);
+
+      /*  items = Arrays.asList("Vibration", *//*"Check Version Info", "SIM Card",*//* "Proximity Sensor",
+                "Flash", "Touch Sensor", "Display", "Light Sensor", "Pressure Sensor"
+                , "Phone Buttons", "Speaker Test", "Gravity sensor", "Magnetic Sensor", "Headphone",
+                "Gyroscope", "GPS Location", "Battery Indicator", "Accelarometer");*/
+
+
         //name = new String();
         //name = null;
-        list = new ArrayList<String>();
-        list.clear();
+        result = new ArrayList<>();
+        result.clear();
         // Check if an existing view is being reused, otherwise inflate the view
         // if (convertView == null) {
 
-        convertView = LayoutInflater.from(getContext()).inflate(
+        convertView = LayoutInflater.from(context).inflate(
                 R.layout.adapter_autotest, parent, false);
 
         // Lookup view for data population
@@ -44,12 +75,14 @@ public class CheckListAdapter extends ArrayAdapter<String> {
         //TextView tvdate = (TextView) convertView.findViewById(R.id.vacdate);
         // Populate the data into the template view using the data object
 
-        tvname.setText(name);
+        tvname.setText(list.get(position));
+        name = listClass.get(position);
 
         // /tvdate.setText(user.date);
 
-        final CheckBox chbx = (CheckBox) convertView.findViewById(R.id.checkBox1);
+        chbx = (CheckBox) convertView.findViewById(R.id.checkBox1);
         chbx.setChecked(false);
+
         chbx.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -58,13 +91,13 @@ public class CheckListAdapter extends ArrayAdapter<String> {
                 if (chbx.isChecked()) {
                     Log.v("tag", "checkbox");
 
-                    list.add(name);
+                    result.add(name);
 
 
                 } else if (chbx.isChecked() == false) {
                     Log.v("tag", "uncheckbox");
 
-                    list.remove(name);
+                    result.remove(name);
 
                 }
 
@@ -75,7 +108,21 @@ public class CheckListAdapter extends ArrayAdapter<String> {
         return convertView;
     }
 
-    public ArrayList<String> check() {
-        return list;
+    public void setCheckBox (Boolean value){
+        if (value){
+            chbx.setChecked(true);
+
+        }
+        else {
+            chbx.setChecked(false);
+        }
+    }
+
+    public boolean getCheckBox(){
+        return chbx.isChecked();
+    }
+
+    public List<String> check() {
+        return result;
     }
 }
