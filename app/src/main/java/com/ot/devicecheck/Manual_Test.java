@@ -1,15 +1,30 @@
 package com.ot.devicecheck;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.ot.devicecheck.adapters.ManualTest_Adapter;
+import com.ot.devicecheck.functionalities.Accelarometer;
+import com.ot.devicecheck.functionalities.Batteryindicator;
+import com.ot.devicecheck.functionalities.Buttontesting;
+import com.ot.devicecheck.functionalities.Display;
+import com.ot.devicecheck.functionalities.Flash;
+import com.ot.devicecheck.functionalities.Gpsloc;
+import com.ot.devicecheck.functionalities.Gravitysensor;
+import com.ot.devicecheck.functionalities.Gyroscope;
+import com.ot.devicecheck.functionalities.Headphone;
+import com.ot.devicecheck.functionalities.Lightsensor;
+import com.ot.devicecheck.functionalities.Magneticsensor;
+import com.ot.devicecheck.functionalities.Mictesting;
+import com.ot.devicecheck.functionalities.Pressure;
+import com.ot.devicecheck.functionalities.ProximitySensor;
+import com.ot.devicecheck.functionalities.TouchSensor;
+import com.ot.devicecheck.functionalities.Vibration;
 
 import java.util.Arrays;
 import java.util.List;
