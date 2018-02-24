@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context="com.ot.devicecheck.Display">
+    tools:context="com.ot.devicecheck.functionalities.Display">
 
     <RelativeLayout
         android:id="@+id/rr"
