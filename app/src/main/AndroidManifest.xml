@@ -44,11 +44,11 @@
         <activity android:name=".Auto_Test"
             android:label="Automated Tests"></activity>
         <activity
-            android:name=".Accelarometer"
+            android:name=".functionalities.Accelarometer"
             android:label="@string/title_activity_accelarometer" >
         </activity>
         <activity
-            android:name=".Magneticsensor"
+            android:name=".functionalities.Magneticsensor"
             android:label="@string/title_activity_magneticsensor" >
         </activity>
 
@@ -60,78 +60,78 @@
 
 
         <activity
-            android:name=".Gyroscope"
+            android:name=".functionalities.Gyroscope"
             android:label="@string/title_activity_gyroscope" >
         </activity>
         <activity
-            android:name=".Batteryindicator"
+            android:name=".functionalities.Batteryindicator"
             android:label="@string/title_activity_batteryindicator" >
         </activity>
 
         <activity
-            android:name=".Gpsloc"
+            android:name=".functionalities.Gpsloc"
             android:label="@string/title_activity_gpsloc" >
         </activity>
         <activity
-            android:name=".Wifiaddress"
+            android:name=".functionalities.Wifiaddress"
             android:label="@string/title_activity_wifiaddress" >
         </activity>
         <activity
-            android:name=".Blueadd"
+            android:name=".functionalities.Blueadd"
             android:label="@string/title_activity_blueadd" >
         </activity>
         <activity
-            android:name=".Headphone"
+            android:name=".functionalities.Headphone"
             android:label="@string/title_activity_headphone" >
         </activity>
         <activity
-            android:name=".Vibration"
+            android:name=".functionalities.Vibration"
             android:label="@string/title_activity_vibration" >
         </activity>
         <activity
-            android:name=".Tele"
+            android:name=".functionalities.Tele"
             android:label="@string/title_activity_tele" >
         </activity>
         <activity
-            android:name=".Systeminfo"
+            android:name=".functionalities.Systeminfo"
             android:label="@string/title_activity_systeminfo" >
         </activity>
         <activity
-            android:name=".TouchSensor"
+            android:name=".functionalities.TouchSensor"
             android:label="@string/title_activity_touch_sensor" >
         </activity>
         <activity
-            android:name=".Display"
+            android:name=".functionalities.Display"
             android:label="@string/title_activity_button" >
         </activity>
         <activity
-            android:name=".ProximitySensor"
+            android:name=".functionalities.ProximitySensor"
             android:label="@string/title_activity_proximity_sensor" >
         </activity>
         <activity
-            android:name=".Lightsensor"
+            android:name=".functionalities.Lightsensor"
             android:label="@string/title_activity_lightsensor" >
         </activity>
         <activity
-            android:name=".Buttontesting"
+            android:name=".functionalities.Buttontesting"
             android:label="@string/title_activity_buttontesting" >
         </activity>
         <activity
-            android:name=".Mictesting"
+            android:name=".functionalities.Mictesting"
             android:label="@string/title_activity_mictesting" >
         </activity>
         <activity
-            android:name=".Pressure"
+            android:name=".functionalities.Pressure"
             android:label="@string/title_activity_pressure" >
         </activity>
         <activity
-            android:name=".Flash"
+            android:name=".functionalities.Flash"
             android:label="@string/title_activity_flash" >
         </activity>
 
 
         <activity
-            android:name=".Gravitysensor"
+            android:name=".functionalities.Gravitysensor"
             android:label="@string/title_activity_gravitysensor" >
         </activity>
     </application>

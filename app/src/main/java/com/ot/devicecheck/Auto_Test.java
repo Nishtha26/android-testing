@@ -1,19 +1,16 @@
 package com.ot.devicecheck;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.lang.reflect.Array;
+import com.ot.devicecheck.adapters.CheckListAdapter;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -25,10 +22,10 @@ import java.util.List;
 
 public class Auto_Test extends AppCompatActivity {
 
-    List<String> items, itemsClass;
+    ArrayList<String> items, itemsClass;
     CheckListAdapter cla;
     String name;
-    List<String> selected;
+    ArrayList<String> selected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,16 +33,23 @@ public class Auto_Test extends AppCompatActivity {
         setContentView(R.layout.activity_automatedtest);
 
         selected = new ArrayList<String>();
+        items = new ArrayList<>();
+        itemsClass = new ArrayList<>();
 
-        items = Arrays.asList("Vibration", /*"Check Version Info", "SIM Card",*/ "Proximity Sensor",
+        items.addAll(Arrays.asList("Vibration", /*"Check Version Info", "SIM Card",*/ "Proximity Sensor",
                 "Flash", "Touch Sensor", "Display", "Light Sensor", "Pressure Sensor"
                 , "Phone Buttons", "Speaker Test", "Gravity sensor", "Magnetic Sensor", "Headphone",
-                "Gyroscope", "GPS Location", "Battery Indicator", "Accelarometer");
+                "Gyroscope", "GPS Location", "Battery Indicator", "Accelarometer"));
 
-        itemsClass = Arrays.asList("Vibration", "ProximitySensor",
+        /*items = Arrays.asList("Vibration", *//*"Check Version Info", "SIM Card",*//* "Proximity Sensor",
+                "Flash", "Touch Sensor", "Display", "Light Sensor", "Pressure Sensor"
+                , "Phone Buttons", "Speaker Test", "Gravity sensor", "Magnetic Sensor", "Headphone",
+                "Gyroscope", "GPS Location", "Battery Indicator", "Accelarometer");*/
+
+        itemsClass.addAll( Arrays.asList("Vibration", "ProximitySensor",
                 "Flash", "TouchSensor", "Display", "Lightsensor", "Pressure",
                 "Buttontesting", "Mictesting", "Gravitysensor", "Magneticsensor", "Headphone",
-                "Gyroscope", "Gpsloc", "Batteryindicator", "Accelarometer");
+                "Gyroscope", "Gpsloc", "Batteryindicator", "Accelarometer"));
 
         Button cont = (Button) findViewById(R.id.buttonCont);
 
@@ -145,6 +149,7 @@ public class Auto_Test extends AppCompatActivity {
         cont.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.i("buttonCont", "onClick");
                 List<String> checked_items = cla.check();
                 Iterator itr = checked_items.iterator();
                 while (itr.hasNext())
