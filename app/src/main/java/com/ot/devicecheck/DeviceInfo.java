@@ -1,6 +1,5 @@
 package com.ot.devicecheck;
 
-import android.app.Activity;
 import android.app.ActivityManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -11,13 +10,14 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
-import android.widget.Adapter;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.ot.devicecheck.adapters.DbListAdapter;
+import com.ot.devicecheck.adapters.ViewAdapter;
+import com.ot.devicecheck.dataObject.SQLElement;
+import com.ot.devicecheck.database.DatabaseHandler;
+
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
